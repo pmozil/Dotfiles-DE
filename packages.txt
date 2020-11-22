@@ -1,0 +1,6 @@
+bspwm-git
+polybar
+rofi
+feh
+setxkbmap
+sxhkd
