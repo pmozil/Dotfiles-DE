@@ -4,7 +4,7 @@
 
 # change language
 alt + space
-	bash /home/petro/.config/sxhkd/scripts/layout
+	bash $HOME/.config/sxhkd/scripts/layout
 
 # terminal emulator
 control + alt + t
