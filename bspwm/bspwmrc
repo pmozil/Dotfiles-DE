@@ -2,6 +2,8 @@
 
 sxhkd &
 
+compton &
+
 polybar bar -c $HOME/.config/polybar/config.ini &
 
 xrandr --output $(xrandr | grep " connected" | cut -f1 -d " ") --brightness 0.6
