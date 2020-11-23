@@ -2,5 +2,5 @@ bspwm-git
 polybar
 rofi
 feh
-setxkbmap
+x11-xkb-utils
 sxhkd
