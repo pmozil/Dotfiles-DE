@@ -2,11 +2,11 @@
 
 sxhkd &
 
-polybar bar -c /home/$USER/.config/polybar/config.ini &
+polybar bar -c $HOME/.config/polybar/config.ini &
 
 xrandr --output $(xrandr | grep " connected" | cut -f1 -d " ") --brightness 0.6
 
-feh --bg-fill /home/$USER/.wallpaper/$(ls $HOME/.wallpaper| shuf -n 1)
+feh --bg-fill $HOME/.wallpaper/$(ls $HOME/.wallpaper| shuf -n 1) || feh --bg-fill /usr/share/backgrounds/gnome/$(ls /usr/share/backgrounds/gnome/| shuf -n 1)
 rm -rf /home/$USER/.fehbg
 
 xsetroot -cursor_name left_ptr
