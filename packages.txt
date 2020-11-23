@@ -4,3 +4,4 @@ rofi
 feh
 x11-xkb-utils
 sxhkd
+compton
