@@ -1,14 +1,14 @@
 * {
-    backgroundcolor: #0a0a0a;
+    backgroundcolor: #182020;
     bg1: #ffffff;
-    backgroundcoloralternate: #0a0a0a;
-    separatorcolor: #0a0a0a;
+    backgroundcoloralternate: #182020;
+    separatorcolor: #182020;
     scrollbarcolor: #3b4252;
     foregroundcolor: #ffffff;
     foregroundcolorinverse: #ffffff;
     selectioncolor: #383838;
 
-    border-color: #0a0a0a;
+    border-color: #182020;
     background-color: @backgroundcolor;
     text-color: @foregroundcolor;
     margin: 5;
@@ -103,5 +103,5 @@
 
 #scrollbar handle {
     border: 1px;
-    border-color: #ffffff;
+    border-color: #c09020;
 }
