@@ -10,6 +10,14 @@ alt + space
 control + alt + t
 	gnome-terminal
 
+alt + button{4,5}
+    bspc desktop {next,prev}.occupied -f
+alt + button2
+    bspc desktop any.!occupied -f
+super + button{4,5}
+    bspc desktop {next,prev}.occupied -f
+super + button2
+    bspc desktop any.!occupied -f
 # program launcher
 alt + F2
 	rofi -combi-modi window,drun -show combi -modi combi -show-icons -matching fuzzy -levenshtein-sort
