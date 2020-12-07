@@ -10,9 +10,7 @@ current = [_ for _ in check_output(
 		["setxkbmap", "-query"]
 	).decode("utf-8").split(
 		'\n'
-	) if 'layout' in _][
-		0
-	].replace(
+	) if 'layout' in _][0].replace(
 	"layout:     ", ''
 )
 

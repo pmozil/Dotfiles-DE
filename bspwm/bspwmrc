@@ -2,8 +2,6 @@
 
 sxhkd &
 
-compton &
-
 setxkblayout us &
 
 polybar bar -c /home/$USER/.config/polybar/config.ini &

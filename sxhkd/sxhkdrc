@@ -4,20 +4,12 @@
 
 # change language
 alt + space
-	bash $HOME/.config/sxhkd/scripts/layout
+	python3 $HOME/.config/bspwm/Scripts/layout.py
 
 # terminal emulator
 control + alt + t
 	gnome-terminal
 
-alt + button{4,5}
-    bspc desktop {next,prev}.occupied -f
-alt + button2
-    bspc desktop any.!occupied -f
-super + button{4,5}
-    bspc desktop {next,prev}.occupied -f
-super + button2
-    bspc desktop any.!occupied -f
 # program launcher
 alt + F2
 	rofi -combi-modi window,drun -show combi -modi combi -show-icons -matching fuzzy -levenshtein-sort
@@ -36,9 +28,9 @@ F5
 
 # brightness keys
 super + F4
-	xrandr --output $(xrandr --current | grep ' connected' | awk ' {print $1} ') --brightness  $(xrandr --verbose | grep Bright | awk ' { print ($2 + 0.1)}')
+	bash $HOME/.config/sxhkd/scripts/incBrightness
 super + F3
-	xrandr --output $(xrandr --current | grep ' connected' | awk ' {print $1} ') --brightness  $(xrandr --verbose | grep Bright | awk ' { print ($2 - 0.1)}')
+	bash $HOME/.config/sxhkd/scripts/decBrightness
 #vscode
 super + F5
 	code
@@ -155,4 +147,3 @@ super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 control + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
-

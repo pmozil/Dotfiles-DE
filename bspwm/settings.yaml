@@ -1,3 +1,4 @@
 layouts:
  - us
  - ua
+windowManager: bspwm
