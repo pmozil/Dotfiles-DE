@@ -1,1 +1,5 @@
-xrandr --output $(xrandr --current | grep ' connected' | awk ' {print $1} ') --brightness  $(xrandr --verbose | grep Bright | awk ' { print ($2 - 0.1)}')
+# !/bin/sh
+
+for m in $(xrandr | grep " connected" | cut -f1 -d " "); do
+    xrandr --output $m --brightness  $(xrandr --verbose | grep Bright |head -n1|awk ' { print ($2 - 0.1)}')
+done

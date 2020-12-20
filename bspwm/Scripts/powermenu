@@ -1,25 +1,24 @@
-#!/bin/bash
-
-## Author : Aditya Shakya (adi1090x)
-## Mail : adi1090x@gmail.com
-## Github : @adi1090x
-## Reddit : @adi1090x
-
+#!/bin/sh
 rofi_command="rofi -show"
 
 uptime=$(uptime -p | sed -e 's/up //g')
 
 # Options
+shutdown="Shut Down\0icon\x1fsystem-shutdown"
+reboot="Reboot\0icon\x1fsystem-restart\n"
+suspend="Suspend\0icon\x1fsystem-suspend\n"
+logout="Log Out\0icon\x1fsystem-log-out\n"
+
+# Variable passed to rofi
+options="$suspend$logout$reboot$shutdown"
+
 shutdown="Shut Down"
 reboot="Reboot"
-lock="Lock"
 suspend="Suspend"
 logout="Log Out"
 
-# Variable passed to rofi
-options="$lock\n$suspend\n$logout\n$reboot\n$shutdown"
-
 chosen="$(echo -e "$options" | $rofi_command -p "UP - $uptime" -dmenu -selected-row 0)"
+echo $chosen
 case $chosen in
     $shutdown)
         systemctl poweroff
@@ -27,16 +26,13 @@ case $chosen in
     $reboot)
         systemctl reboot
         ;;
-    $lock)
-        /home/fhilipe/.config/polybar/scripts/lock.sh
-        ;;
     $suspend)
         mpc -q pause
         amixer set Master mute
         systemctl suspend
         ;;
     $logout)
-        bspc quit
+        pkill -KILL -u $USER
         ;;
 esac
 

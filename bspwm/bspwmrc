@@ -2,16 +2,20 @@
 
 sxhkd &
 
-setxkblayout us &
+setxkbmap us &
 
-polybar bar -c /home/$USER/.config/polybar/config.ini &
+sh $HOME/.config/bspwm/Scripts/polybarStart.sh &
 
-xrandr --output $(xrandr | grep " connected" | cut -f1 -d " ") --brightness 0.6
+sh $HOME/.config/bspwm/Scripts/monitorBrightness.sh &
 
-feh --bg-fill /home/$USER/.wallpaper/$(ls $HOME/.wallpaper| shuf -n 1)
+feh --bg-fill /home/$USER/.wallpaper/$(ls $HOME/.wallpaper| shuf -n 1) 
 rm -rf /home/$USER/.fehbg
 
 xsetroot -cursor_name left_ptr
+
+sh $HOME/.config/bspwm/Scripts/workspaces.sh
+
+amixer set Master toggle
 
 bspc config border_width         1
 bspc config window_gap           5

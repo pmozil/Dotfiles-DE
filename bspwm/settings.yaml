@@ -1,4 +1,5 @@
 layouts:
  - us
  - ua
-windowManager: bspwm
+rofiTheme: Pop-dark
+rofiLayout: Pop
